@@ -26,7 +26,6 @@ class AjFlutterPlugin {
       final Completer<AjFlutterPlugin> completer = Completer<AjFlutterPlugin>();
       _channel.invokeMethod("getPlatformVersion").then((dynamic result){
         final Map<dynamic, dynamic> map = result;
-        print(map.toString());
         completer.complete(AjFlutterPlugin(
             appName: map["appName"],
             packageName: map["packageName"],
