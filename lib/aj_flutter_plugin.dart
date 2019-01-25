@@ -22,7 +22,10 @@ class AjFlutterPlugin {
   static Future<AjFlutterPlugin> _fromPlatform;
 
   static Future<void> clearCatch() async {
-    _channel.invokeMethod("clearCatch");
+    if(Platform.isAndroid){
+      _channel.invokeMethod("clearCatch");
+    }
+
   }
 
   ///获取版本信息
