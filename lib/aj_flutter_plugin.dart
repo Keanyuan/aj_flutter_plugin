@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/services.dart';
 
@@ -19,6 +20,10 @@ class AjFlutterPlugin {
     this.buildNumber
   });
   static Future<AjFlutterPlugin> _fromPlatform;
+
+  static Future<void> clearCatch() async {
+    _channel.invokeMethod("clearCatch");
+  }
 
   ///获取版本信息
   static Future<AjFlutterPlugin> platformVersion() async {

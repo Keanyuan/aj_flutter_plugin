@@ -1,12 +1,15 @@
 package com.plus.anji.ajflutterplugin;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.util.Log;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,6 +18,8 @@ import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
+
+import static android.content.ContentValues.TAG;
 
 /** AjFlutterPlugin */
 
@@ -57,6 +62,10 @@ public class AjFlutterPlugin implements MethodCallHandler {
         }
         result.success(null);
 
+      } else if(call.method.equals("clearCatch")){
+        clearWebViewCache();
+        result.success(null);
+
       }else {
         result.notImplemented();
       }
@@ -85,4 +94,59 @@ public class AjFlutterPlugin implements MethodCallHandler {
     result.success(canLaunch);
   }
 
+  /**
+   * 清除WebView缓存
+   */
+  private void clearWebViewCache(){
+    Context context = new Activity();
+
+    //清理Webview缓存数据库
+    try {
+      context.deleteDatabase("webview.db");
+      context.deleteDatabase("webviewCache.db");
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
+    //WebView 缓存文件
+    File appCacheDir = new File(context.getFilesDir().getAbsolutePath()+"/webcache");
+
+    File webviewCacheDir = new File(context.getCacheDir().getAbsolutePath()+"/webviewCache");
+
+    //删除webview 缓存目录
+    if(webviewCacheDir.exists()){
+      deleteFile(webviewCacheDir);
+    }
+    //删除webview 缓存 缓存目录
+    if(appCacheDir.exists()){
+      deleteFile(appCacheDir);
+    }
+  }
+
+  /**
+   * 递归删除 文件/文件夹
+   *
+   * @param file
+   */
+  private void deleteFile(File file) {
+
+    Log.i(TAG, "delete file path=" + file.getAbsolutePath());
+
+    if (file.exists()) {
+      if (file.isFile()) {
+        file.delete();
+      } else if (file.isDirectory()) {
+        File files[] = file.listFiles();
+        for (int i = 0; i < files.length; i++) {
+          deleteFile(files[i]);
+        }
+      }
+      file.delete();
+    } else {
+      Log.e(TAG, "delete file no exists " + file.getAbsolutePath());
+    }
+  }
+
 }
+
+
