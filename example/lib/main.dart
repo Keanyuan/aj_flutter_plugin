@@ -29,7 +29,6 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       info = await AjFlutterPlugin.platformVersion();
-      AjFlutterPlugin.clearCatch();
       platformVersion = "appName:${info.appName}\n"
           + "packageName: ${info.packageName}\n"
           + "version:${info.version}\n"

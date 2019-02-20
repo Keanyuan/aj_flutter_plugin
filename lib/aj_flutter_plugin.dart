@@ -20,14 +20,6 @@ class AjFlutterPlugin {
     this.buildNumber
   });
   static Future<AjFlutterPlugin> _fromPlatform;
-
-  static Future<void> clearCatch() async {
-    if(Platform.isAndroid){
-      _channel.invokeMethod("clearCatch");
-    }
-
-  }
-
   ///获取版本信息
   static Future<AjFlutterPlugin> platformVersion() async {
     if(_fromPlatform == null){
