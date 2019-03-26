@@ -28,7 +28,10 @@
       NSString *utlString = arguments[@"url"];
       [self launchURL:utlString result:result];
     
-  } else {
+  }else if ([@"canLaunch" isEqualToString:call.method]) {
+      NSString *url = call.arguments[@"url"];
+      result(@([self canLaunchURL:url]));
+  }else {
     result(FlutterMethodNotImplemented);
   }
 }
@@ -39,6 +42,12 @@
         [[UIApplication sharedApplication] openURL:url];
     }
     result(@"");
+}
+
+- (BOOL)canLaunchURL:(NSString *)urlString {
+  NSURL *url = [NSURL URLWithString:urlString];
+  UIApplication *application = [UIApplication sharedApplication];
+  return [application canOpenURL:url];
 }
 
 @end

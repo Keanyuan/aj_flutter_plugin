@@ -51,18 +51,26 @@ public class AjFlutterPlugin implements MethodCallHandler {
         result.success(map);
       } else if (call.method.equals("launchUrl")){
         String url = call.argument("url");
-        if(canLaunchUrl(url)){
-          Intent launchIntent;
-          launchIntent = new Intent(Intent.ACTION_VIEW);
-          launchIntent.setData(Uri.parse(url));
-          context.startActivity(launchIntent);
-          if (mRegistrar.activity() == null) {
-            launchIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-          }
+        Intent launchIntent;
+        if (mRegistrar.activity() != null) {
+          context = (Context) mRegistrar.activity();
+        } else {
+          context = mRegistrar.context();
         }
+
+        launchIntent = new Intent(Intent.ACTION_VIEW);
+        launchIntent.setData(Uri.parse(url));
+        if (mRegistrar.activity() == null) {
+          launchIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        }
+        context.startActivity(launchIntent);
+
         result.success(null);
 
-      }else {
+      } else if (call.method.equals("canLaunch")) {
+        String url = call.argument("url");
+        canLaunch(url, result);
+      } else {
         result.notImplemented();
       }
     } catch (PackageManager.NameNotFoundException e){

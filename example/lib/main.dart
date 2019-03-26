@@ -62,7 +62,10 @@ class _MyAppState extends State<MyApp> {
             Text('$_platformVersion\n'),
             FlatButton(onPressed: () async{
               if(Platform.isAndroid){
-                await launch("https://www.pgyer.com/Ti9R");
+                if(await canLaunch("https://www.pgyer.com/Ti9R")){
+                  await launch("https://www.pgyer.com/Ti9R");
+                }
+
               } else if(Platform.isIOS){
                 await launch("http://itunes.apple.com/cn/app/id1441492772");
               }

@@ -11,6 +11,17 @@ Future<void> launch(String urlString){
   return _channel.invokeMethod('launchUrl', {'url': urlString});
 
 }
+
+Future<bool> canLaunch(String urlString) async {
+  if (urlString == null) {
+    return false;
+  }
+  return await _channel.invokeMethod(
+    'canLaunch',
+    <String, Object>{'url': urlString},
+  );
+}
+
 class AjFlutterPlugin {
 
   AjFlutterPlugin({
