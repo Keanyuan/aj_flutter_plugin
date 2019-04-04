@@ -6,16 +6,45 @@ import 'package:flutter/services.dart';
 
 const MethodChannel _channel = const MethodChannel('aj_flutter_plugin');
 
-///launch application webview
+/// 跳转外部浏览器、打电话、发邮件
+/// 外链url:  http:xxx, https:
+/// 与canLaunch同步使用
 Future<void> launch(String urlString){
-  return _channel.invokeMethod('launchUrl', {'url': urlString});
-
+  if(urlString.isNotEmpty){
+    return _channel.invokeMethod('launchUrl', {'url': urlString});
+  }
 }
 
+//打电话
+Future<void> launchCallPhone(String phoneNum){
+  if(phoneNum.isNotEmpty){
+  String _callphone = "tel:" + phoneNum;
+  return _channel.invokeMethod('launchUrl', {'url': _callphone});
+  }
+}
+
+//发短信
+Future<void> launchMessage(String messagePhone){
+  if(messagePhone.isNotEmpty){
+    String _messagePhone = "sms:" + messagePhone;
+    return _channel.invokeMethod('launchUrl', {'url': _messagePhone});
+  }
+}
+
+//发邮箱 手机号
+Future<void> launchEmail(String emailNum){
+  if(emailNum.isNotEmpty){
+    String _emailNum = "mailto:" + emailNum;
+    return _channel.invokeMethod('launchUrl', {'url': _emailNum});
+  }
+}
+
+//退出APP
 Future<void> exitApp(){
   return _channel.invokeMethod('exitAppMethod');
 }
 
+//是否可以跳转
 Future<bool> canLaunch(String urlString) async {
   if (urlString == null) {
     return false;

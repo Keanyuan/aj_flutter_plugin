@@ -63,6 +63,7 @@ class _MyAppState extends State<MyApp> {
             children: <Widget>[
               Text('$_platformVersion\n'),
               FlatButton(
+                color: Colors.black12,
                 onPressed: () async {
                   if (Platform.isAndroid) {
                     if (await canLaunch("https://www.pgyer.com/Ti9R")) {
@@ -72,15 +73,43 @@ class _MyAppState extends State<MyApp> {
                     await launch("http://itunes.apple.com/cn/app/id1441492772");
                   }
                 },
-                child: Text("点击"),
+                child: Text("跳转外部链接"),
               ),
 
               FlatButton(
+                color: Colors.black12,
+                onPressed: () async {
+                  await launchCallPhone('10086');
+                },
+                child: Text("打电话 100000"),
+              ),
+
+              FlatButton(
+                color: Colors.black12,
+                onPressed: () async {
+                  await launchEmail('100000');
+                },
+                child: Text("发邮件 100000"),
+              ),
+
+              FlatButton(
+                color: Colors.black12,
+                onPressed: () async {
+                  await launchMessage('188188888888');
+                },
+                child: Text("发信息 10086"),
+              ),
+
+              FlatButton(
+                color: Colors.black12,
                 onPressed: () async {
                   _exitApp();
                 },
                 child: Text("退出app"),
               ),
+
+
+
             ],
           )),
         ),
