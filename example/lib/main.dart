@@ -15,6 +15,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
+  int firstBackPressTime = 0;
 
   @override
   void initState() {
@@ -29,13 +30,12 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       info = await AjFlutterPlugin.platformVersion();
-      platformVersion = "appName:${info.appName}\n"
-          + "packageName: ${info.packageName}\n"
-          + "version:${info.version}\n"
-          + "buildNumber:${info.buildNumber}";
+      platformVersion = "appName:${info.appName}\n" +
+          "packageName: ${info.packageName}\n" +
+          "version:${info.version}\n" +
+          "buildNumber:${info.buildNumber}";
 
       print(platformVersion);
-
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -53,26 +53,54 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: ListView(children: <Widget>[
-            Text('$_platformVersion\n'),
-            FlatButton(onPressed: () async{
-              if(Platform.isAndroid){
-                if(await canLaunch("https://www.pgyer.com/Ti9R")){
-                  await launch("https://www.pgyer.com/Ti9R");
-                }
+      home: WillPopScope(
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text('Plugin example app'),
+          ),
+          body: Center(
+              child: ListView(
+            children: <Widget>[
+              Text('$_platformVersion\n'),
+              FlatButton(
+                onPressed: () async {
+                  if (Platform.isAndroid) {
+                    if (await canLaunch("https://www.pgyer.com/Ti9R")) {
+                      await launch("https://www.pgyer.com/Ti9R");
+                    }
+                  } else if (Platform.isIOS) {
+                    await launch("http://itunes.apple.com/cn/app/id1441492772");
+                  }
+                },
+                child: Text("点击"),
+              ),
 
-              } else if(Platform.isIOS){
-                await launch("http://itunes.apple.com/cn/app/id1441492772");
-              }
-            }, child: Text("点击"))
-          ],)
+              FlatButton(
+                onPressed: () async {
+                  _exitApp();
+                },
+                child: Text("退出app"),
+              ),
+            ],
+          )),
         ),
+        onWillPop: () {
+          _exitApp();
+        },
       ),
     );
+  }
+
+  _exitApp() {
+    //Android 回到桌面
+    int secondTime = new DateTime.now().millisecondsSinceEpoch;
+    if (secondTime - firstBackPressTime > 2000) {
+      // 如果两次按键时间间隔大于2秒，则不退出
+      firstBackPressTime = secondTime; // 更新firstTime
+      print("再按一次退出程序");
+    } else {
+      //退出到桌面
+      exitApp();
+    }
   }
 }

@@ -12,6 +12,10 @@ Future<void> launch(String urlString){
 
 }
 
+Future<void> exitApp(){
+  return _channel.invokeMethod('exitAppMethod');
+}
+
 Future<bool> canLaunch(String urlString) async {
   if (urlString == null) {
     return false;

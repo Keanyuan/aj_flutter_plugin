@@ -2,9 +2,7 @@
 
 @implementation AjFlutterPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"aj_flutter_plugin"
-            binaryMessenger:[registrar messenger]];
+  FlutterMethodChannel* channel = [FlutterMethodChannel methodChannelWithName:@"aj_flutter_plugin" binaryMessenger:[registrar messenger]];
   AjFlutterPlugin* instance = [[AjFlutterPlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];
 }
@@ -28,10 +26,13 @@
       NSString *utlString = arguments[@"url"];
       [self launchURL:utlString result:result];
     
-  }else if ([@"canLaunch" isEqualToString:call.method]) {
+  } else if ([@"canLaunch" isEqualToString:call.method]) {
       NSString *url = call.arguments[@"url"];
       result(@([self canLaunchURL:url]));
-  }else {
+  } else if ([@"exitAppMethod" isEqualToString:call.method]) {
+      exit(0);
+      result([NSNumber numberWithBool:true]);
+  } else {
     result(FlutterMethodNotImplemented);
   }
 }

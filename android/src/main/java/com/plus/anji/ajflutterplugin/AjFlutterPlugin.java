@@ -40,7 +40,7 @@ public class AjFlutterPlugin implements MethodCallHandler {
   public void onMethodCall(MethodCall call, Result result) {
     try {
       Context context = mRegistrar.context();
-      if (call.method.equals("getPlatformVersion")) {
+      if (call.method.equals("getPlatformVersion")) { //获取版本信息
         PackageManager pm = context.getPackageManager();
         PackageInfo info = pm.getPackageInfo(context.getPackageName(), 0);
         Map<String, String> map = new HashMap<String, String>();
@@ -49,7 +49,7 @@ public class AjFlutterPlugin implements MethodCallHandler {
         map.put("version", info.versionName);
         map.put("buildNumber", String.valueOf(info.versionCode));
         result.success(map);
-      } else if (call.method.equals("launchUrl")){
+      } else if (call.method.equals("launchUrl")){ //跳转外链，打电话，发邮件
         String url = call.argument("url");
         Intent launchIntent;
         if (mRegistrar.activity() != null) {
@@ -67,9 +67,22 @@ public class AjFlutterPlugin implements MethodCallHandler {
 
         result.success(null);
 
-      } else if (call.method.equals("canLaunch")) {
+      } else if (call.method.equals("canLaunch")) { //是否可以跳转
         String url = call.argument("url");
         canLaunch(url, result);
+      } else if (call.method.equals("exitAppMethod")) { //回到桌面
+        if (mRegistrar.activity() != null) {
+          context = (Context) mRegistrar.activity();
+        } else {
+          context = mRegistrar.context();
+        }
+
+        if (context instanceof Activity) {
+          System.out.println("退出");
+          ((Activity)context).moveTaskToBack(true);
+        }
+        result.success(null);
+
       } else {
         result.notImplemented();
       }
