@@ -30,8 +30,10 @@
       NSString *url = call.arguments[@"url"];
       result(@([self canLaunchURL:url]));
   } else if ([@"exitAppMethod" isEqualToString:call.method]) {
-      exit(0);
       result([NSNumber numberWithBool:true]);
+      exit(0);
+  } else if ([@"isiOSSimuLator" isEqualToString:call.method]) {
+      result([NSNumber numberWithBool:[self isiOSSimuLator]]);
   } else {
     result(FlutterMethodNotImplemented);
   }
@@ -50,5 +52,17 @@
   UIApplication *application = [UIApplication sharedApplication];
   return [application canOpenURL:url];
 }
+
+//判断是否是模拟器
+-(BOOL)isiOSSimuLator {
+    if (TARGET_IPHONE_SIMULATOR == 1 && TARGET_OS_IPHONE == 1) {
+        //模拟器
+        return YES;
+    }else{
+        //真机
+        return NO;
+    }
+}
+    
 
 @end

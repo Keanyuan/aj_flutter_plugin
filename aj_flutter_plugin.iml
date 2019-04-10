@@ -11,15 +11,7 @@
       <excludeFolder url="file://$MODULE_DIR$/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/example/build" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/example/build/app/intermediates/flutter/debug/flutter_assets/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/example/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out/flutter_assets/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/example/build/flutter_assets/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/example/build/ios/Debug-iphoneos/Runner.app/flutter_assets/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/example/build/ios/Debug-iphonesimulator/Runner.app/flutter_assets/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/example/build/ios/Release-iphoneos/Runner.app/flutter_assets/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/example/build/ios/iphoneos/Runner.app/flutter_assets/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/example/build/ios/iphonesimulator/Runner.app/flutter_assets/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/example/ios/Flutter/flutter_assets/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/Flutter/App.framework/flutter_assets/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Flutter/flutter_assets/packages" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />

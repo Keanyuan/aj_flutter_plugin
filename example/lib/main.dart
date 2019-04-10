@@ -109,6 +109,14 @@ class _MyAppState extends State<MyApp> {
               ),
 
 
+              FlatButton(
+                color: Colors.black12,
+                onPressed: () async {
+                  print(await isiOSSimuLator());
+                },
+                child: Text("是否是模拟器"),
+              ),
+
 
             ],
           )),

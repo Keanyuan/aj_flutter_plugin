@@ -55,6 +55,17 @@ Future<bool> canLaunch(String urlString) async {
   );
 }
 
+//判断是否是iOS模拟器
+Future<bool> isiOSSimuLator() async {
+  if(Platform.isIOS){
+    return await _channel.invokeMethod('isiOSSimuLator');
+  } else{
+    return false;
+  }
+
+}
+
+
 class AjFlutterPlugin {
 
   AjFlutterPlugin({
