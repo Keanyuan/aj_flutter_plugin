@@ -65,7 +65,6 @@ Future<bool> isiOSSimuLator() async {
 
 }
 
-
 class AjFlutterPlugin {
 
   AjFlutterPlugin({
@@ -75,6 +74,28 @@ class AjFlutterPlugin {
     this.buildNumber
   });
   static Future<AjFlutterPlugin> _fromPlatform;
+
+  //判断iOS请求权限
+  static Future<int> getLocationPermissions() async {
+    if(Platform.isIOS){
+      return await _channel.invokeMethod('locationPermissions');
+    } else{
+      return 1;
+    }
+
+  }
+//  //iOS获取权限
+//  static Future<int> getRequestlocationAuthorization() async {
+//    if(Platform.isIOS){
+//      return await _channel.invokeMethod('requestlocationAuthorization');
+//    } else{
+//      return 1;
+//    }
+//
+//  }
+
+
+
   ///获取版本信息
   static Future<AjFlutterPlugin> platformVersion() async {
     if(_fromPlatform == null){
@@ -94,6 +115,8 @@ class AjFlutterPlugin {
 
     return _fromPlatform;
   }
+
+
   /// The app name. `CFBundleDisplayName` on iOS, `application/label` on Android.
   final String appName;
 

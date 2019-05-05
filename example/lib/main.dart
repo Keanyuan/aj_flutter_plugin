@@ -108,7 +108,6 @@ class _MyAppState extends State<MyApp> {
                 child: Text("退出app"),
               ),
 
-
               FlatButton(
                 color: Colors.black12,
                 onPressed: () async {
@@ -116,7 +115,17 @@ class _MyAppState extends State<MyApp> {
                 },
                 child: Text("是否是模拟器"),
               ),
-
+              FlatButton(
+                color: Colors.black12,
+                onPressed: () async {
+                  int permissState = await AjFlutterPlugin.getLocationPermissions();
+                  _platformVersion = "$permissState";
+                  setState(() {
+                  });
+                },
+                child: Text("获取权限"),
+              ),
+              //getLocationPermissions
 
             ],
           )),
