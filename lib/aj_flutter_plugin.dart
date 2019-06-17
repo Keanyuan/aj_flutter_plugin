@@ -129,4 +129,10 @@ class AjFlutterPlugin {
   /// The build number. `CFBundleVersion` on iOS, `versionCode` on Android.
   final String buildNumber;
 
-}
+
+  static Future<bool> clearWebCache() async {
+    return await _channel.invokeMethod('clearWebCache');
+  }
+
+
+  }

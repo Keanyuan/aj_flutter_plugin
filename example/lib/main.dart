@@ -125,6 +125,19 @@ class _MyAppState extends State<MyApp> {
                 },
                 child: Text("获取权限"),
               ),
+              FlatButton(
+                color: Colors.black12,
+                onPressed: () async {
+                  bool _clearWebCache = await AjFlutterPlugin.clearWebCache();
+
+                  if(_clearWebCache){
+                    setState(() {
+                      _platformVersion = "清除成功";
+                    });
+                  }
+                },
+                child: Text("清除缓存"),
+              ),
               //getLocationPermissions
 
             ],

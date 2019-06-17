@@ -1,5 +1,5 @@
 #import "AjFlutterPlugin.h"
-
+#import <WebKit/WebKit.h>
 
 @implementation AjFlutterPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -33,6 +33,8 @@
       exit(0);
   } else if ([@"isiOSSimuLator" isEqualToString:call.method]) {
       result([NSNumber numberWithBool:[self isiOSSimuLator]]);
+  }else if ([@"clearWebCache" isEqualToString:call.method]) {
+      result([NSNumber numberWithBool:[self clearWebCache]]);
   } else if ([@"locationPermissions" isEqualToString:call.method]) {
 //      这里就要查看CLLocationManager的授权状态，此方法会返回当前授权状态：
 //      [CLLocationManager authorizationStatus];
@@ -93,6 +95,40 @@
     }
 }
 
+
+- (BOOL)clearWebCache{
+    if (@available(iOS 9.0, *)) {
+        NSArray * types =@[WKWebsiteDataTypeMemoryCache,WKWebsiteDataTypeDiskCache]; // iOS 9.0之后
+        NSSet *websiteDataTypes = [NSSet setWithArray:types];
+        NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0];
+        [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{
+            
+        }];
+    } else {
+        NSString *libraryDir = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory,NSUserDomainMask, YES)[0];
+        
+        NSString *bundleId = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
+        
+        NSString *webkitFolderInLib = [NSString stringWithFormat:@"%@/WebKit",libraryDir];
+        
+        NSString *webKitFolderInCaches = [NSString stringWithFormat:@"%@/Caches/%@/WebKit",libraryDir,bundleId];
+        
+        NSError *error;
+        
+        [[NSFileManager defaultManager] removeItemAtPath:webKitFolderInCaches error:&error];
+        
+        [[NSFileManager defaultManager] removeItemAtPath:webkitFolderInLib error:nil];
+        
+        [[NSURLCache sharedURLCache] removeAllCachedResponses];
+        
+        [[NSURLCache sharedURLCache] setDiskCapacity:0];
+        
+        [[NSURLCache sharedURLCache] setMemoryCapacity:0];
+        
+    }
+    return true;
+}
+
 /** 定位服务状态改变时调用*/
 //-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 //{
@@ -138,6 +174,8 @@
 //            break;
 //    }
 //}
+
+
 
 
     

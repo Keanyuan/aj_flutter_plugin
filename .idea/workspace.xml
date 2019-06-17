@@ -8,15 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="de6d357d-266a-4fc9-bb9a-3fff1eb3fcfa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/plus/anji/ajflutterplugin/AjFlutterPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/plus/anji/ajflutterplugin/AjFlutterPlugin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/example/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/example/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/ios/Classes/AjFlutterPlugin.h" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/ios/Classes/AjFlutterPlugin.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/ios/Classes/AjFlutterPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/ios/Classes/AjFlutterPlugin.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/lib/aj_flutter_plugin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aj_flutter_plugin/lib/aj_flutter_plugin.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/AjFlutterPlugin.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/AjFlutterPlugin.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Classes/AjFlutterPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/AjFlutterPlugin.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/aj_flutter_plugin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/aj_flutter_plugin.dart" afterDir="false" />
     </list>
@@ -37,20 +31,21 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="4" />
+          <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Podfile" value="2" />
-          <entry key="dart" value="5" />
+          <entry key="dart" value="6" />
           <entry key="gitignore" value="2" />
-          <entry key="java" value="1" />
+          <entry key="java" value="3" />
           <entry key="m" value="5" />
           <entry key="md" value="2" />
           <entry key="properties" value="1" />
@@ -59,8 +54,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Dart" value="5" />
-          <entry key="JAVA" value="1" />
+          <entry key="Dart" value="6" />
+          <entry key="JAVA" value="3" />
           <entry key="ObjectiveC" value="5" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Properties" value="1" />
@@ -69,15 +64,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="961" />
-          <entry key="java" value="43" />
+          <entry key="dart" value="1059" />
+          <entry key="java" value="81" />
           <entry key="m" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="961" />
-          <entry key="JAVA" value="43" />
+          <entry key="Dart" value="1059" />
+          <entry key="JAVA" value="81" />
           <entry key="ObjectiveC" value="21" />
         </counts>
       </usages-collector>
@@ -85,28 +80,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/aj_flutter_plugin.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="92" column="7" selection-start-line="86" selection-start-column="4" selection-end-line="95" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/ios/Podfile">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="121" column="56" lean-forward="true" selection-start-line="121" selection-end-line="122" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="247">
+              <caret line="115" column="25" lean-forward="true" selection-start-line="115" selection-start-column="25" selection-end-line="115" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -114,8 +92,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ios/Classes/AjFlutterPlugin.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="189">
+              <caret line="35" column="28" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="134" column="48" selection-start-line="134" selection-start-column="48" selection-end-line="134" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,6 +121,7 @@
       <find>launchURL</find>
       <find>lau</find>
       <find>exitAppMethod</find>
+      <find>clearWebCache</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -140,18 +131,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/android/src/main/java/com/plus/anji/ajflutterplugin/AjFlutterPlugin.java" />
         <option value="$PROJECT_DIR$/ios/Classes/AjFlutterPlugin.m" />
-        <option value="$PROJECT_DIR$/example/lib/main.dart" />
+        <option value="$PROJECT_DIR$/android/src/main/java/com/plus/anji/ajflutterplugin/AjFlutterPlugin.java" />
         <option value="$PROJECT_DIR$/lib/aj_flutter_plugin.dart" />
+        <option value="$PROJECT_DIR$/example/lib/main.dart" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="318" />
+    <option name="x" value="222" />
     <option name="y" value="23" />
-    <option name="width" value="1073" />
-    <option name="height" value="834" />
+    <option name="width" value="1169" />
+    <option name="height" value="831" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -159,9 +150,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -178,18 +169,13 @@
               <item name="aj_flutter_plugin" type="b2602c69:ProjectViewProjectNode" />
               <item name="aj_flutter_plugin" type="462c0819:PsiDirectoryNode" />
               <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aj_flutter_plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aj_flutter_plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aj_flutter_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aj_flutter_plugin" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aj_flutter_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aj_flutter_plugin" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
-              <item name="Classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="aj_flutter_plugin" type="b2602c69:ProjectViewProjectNode" />
@@ -255,10 +241,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="318" y="23" width="1073" height="834" extended-state="0" />
+    <frame x="222" y="23" width="1169" height="831" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30067894" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2786158" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -268,7 +254,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37196764" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37077132" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -378,13 +364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/plus/anji/ajflutterplugin/AjFlutterPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/gradle.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -398,27 +377,41 @@
     <entry file="file://$PROJECT_DIR$/example/ios/Podfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ios/Classes/AjFlutterPlugin.m">
+    <entry file="file://$PROJECT_DIR$/example/android/app/src/main/java/com/plus/anji/ajflutterpluginexample/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/plus/anji/ajflutterplugin/AjFlutterPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="121" column="56" lean-forward="true" selection-start-line="121" selection-end-line="122" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="303">
+          <caret line="114" column="3" lean-forward="true" selection-start-line="114" selection-start-column="3" selection-end-line="114" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ios/Classes/AjFlutterPlugin.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/aj_flutter_plugin.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="92" column="7" selection-start-line="86" selection-start-column="4" selection-end-line="95" />
+        <state relative-caret-position="247">
+          <caret line="115" column="25" lean-forward="true" selection-start-line="115" selection-start-column="25" selection-end-line="115" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="134" column="48" selection-start-line="134" selection-start-column="48" selection-end-line="134" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
